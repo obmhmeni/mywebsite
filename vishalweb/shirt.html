@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shirt Categories</title>
+    <style>
+        .shirt-category {
+            display: none;
+            margin-top: 10px;
+        }
+        .shirt-category button {
+            display: block;
+            margin: 5px 0;
+        }
+    </style>
+    <link rel="stylesheet" href="desingn.css">
+</head>
+<body>
+    <h1>Select Shirt Category</h1>
+    
+    <!-- Category Buttons -->
+    <button onclick="showCategory('casual')">Casual Shirts</button>
+    <button onclick="showCategory('formal')">Formal Shirts</button>
+    <button onclick="showCategory('printed')">Printed Shirts</button>
+    <button onclick="showCategory('designer')">Oversized & Designer Shirts</button>
+
+    <!-- Casual Shirts -->
+    <div id="casual" class="shirt-category">
+        <div class="shirt-item">
+            <span>Classic Denim Shirt - ₹1,199</span>
+            <button onclick="addToCart('Classic Denim Shirt', 1199)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Slim Fit Plaid Shirt - ₹999</span>
+            <button onclick="addToCart('Slim Fit Plaid Shirt', 999)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Linen Blend Casual Shirt - ₹1,299</span>
+            <button onclick="addToCart('Linen Blend Casual Shirt', 1299)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Striped Cotton Shirt - ₹899</span>
+            <button onclick="addToCart('Striped Cotton Shirt', 899)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Mandarin Collar Shirt - ₹1,049</span>
+            <button onclick="addToCart('Mandarin Collar Shirt', 1049)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Solid Oxford Shirt - ₹1,149</span>
+            <button onclick="addToCart('Solid Oxford Shirt', 1149)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Half-Sleeve Hawaiian Shirt - ₹749</span>
+            <button onclick="addToCart('Half-Sleeve Hawaiian Shirt', 749)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Floral Print Shirt - ₹1,299</span>
+            <button onclick="addToCart('Floral Print Shirt', 1299)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Button-Down Chambray Shirt - ₹1,399</span>
+            <button onclick="addToCart('Button-Down Chambray Shirt', 1399)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Retro Polka Dot Shirt - ₹1,199</span>
+            <button onclick="addToCart('Retro Polka Dot Shirt', 1199)">Add to Cart</button>
+        </div>
+        
+    </div>
+
+    <!-- Formal Shirts -->
+    <div id="formal" class="shirt-category">
+        <div class="shirt-item">
+            <span>Classic White Dress Shirt - ₹1,599</span>
+            <button onclick="addToCart('Classic White Dress Shirt', 1599)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Slim Fit Black Shirt - ₹1,499</span>
+            <button onclick="addToCart('Slim Fit Black Shirt', 1499)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Checkered Formal Shirt - ₹1,299</span>
+            <button onclick="addToCart('Checkered Formal Shirt', 1299)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Textured Silk Shirt - ₹1,999</span>
+            <button onclick="addToCart('Textured Silk Shirt', 1999)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Pinstripe Office Shirt - ₹1,399</span>
+            <button onclick="addToCart('Pinstripe Office Shirt', 1399)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Spread Collar Shirt - ₹1,049</span>
+            <button onclick="addToCart('Spread Collar Shirt', 1049)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Double Cuff Formal Shirt - ₹1,899</span>
+            <button onclick="addToCart('Double Cuff Formal Shirt', 1899)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Pastel Blue Formal Shirt - ₹1,199</span>
+            <button onclick="addToCart('Pastel Blue Formal Shirt', 1199)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Charcoal Gray Shirt - ₹1,499</span>
+            <button onclick="addToCart('Charcoal Gray Shirt', 1499)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Wine Red Satin Shirt - ₹1,799</span>
+            <button onclick="addToCart('Wine Red Satin Shirt', 1799)">Add to Cart</button>
+        </div>
+        
+    </div>
+
+    <!-- Printed Shirts -->
+    <div id="printed" class="shirt-category">
+        <div class="shirt-item">
+            <span>Abstract Print Shirt - ₹1,299</span>
+            <button onclick="addToCart('Abstract Print Shirt', 1299)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Camouflage Shirt - ₹1,399</span>
+            <button onclick="addToCart('Camouflage Shirt', 1399)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Animal Print Shirt - ₹1,349</span>
+            <button onclick="addToCart('Animal Print Shirt', 1349)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Geometric Pattern Shirt - ₹1,249</span>
+            <button onclick="addToCart('Geometric Pattern Shirt', 1249)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Tropical Print Shirt - ₹1,399</span>
+            <button onclick="addToCart('Tropical Print Shirt', 1399)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Typography Graphic Shirt - ₹1,049</span>
+            <button onclick="addToCart('Typography Graphic Shirt', 1049)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Ethnic Motif Shirt - ₹1,199</span>
+            <button onclick="addToCart('Ethnic Motif Shirt', 1199)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Gradient Color Shirt - ₹1,499</span>
+            <button onclick="addToCart('Gradient Color Shirt', 1499)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Vintage Floral Shirt - ₹1,349</span>
+            <button onclick="addToCart('Vintage Floral Shirt', 1349)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Tribal Print Shirt - ₹1,299</span>
+            <button onclick="addToCart('Tribal Print Shirt', 1299)">Add to Cart</button>
+        </div>
+        
+    </div>
+
+    <!-- Oversized & Designer Shirts -->
+    <div id="designer" class="shirt-category">
+        <div class="shirt-item">
+            <span>Oversized Cotton Shirt - ₹1,549</span>
+            <button onclick="addToCart('Oversized Cotton Shirt', 1549)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Asymmetrical Cut Shirt - ₹1,699</span>
+            <button onclick="addToCart('Asymmetrical Cut Shirt', 1699)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Embroidered Collar Shirt - ₹1,899</span>
+            <button onclick="addToCart('Embroidered Collar Shirt', 1899)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>High-Low Hem Shirt - ₹1,749</span>
+            <button onclick="addToCart('High-Low Hem Shirt', 1749)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Patchwork Style Shirt - ₹1,299</span>
+            <button onclick="addToCart('Patchwork Style Shirt', 1299)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Two-Tone Colorblock Shirt - ₹1,599</span>
+            <button onclick="addToCart('Two-Tone Colorblock Shirt', 1599)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Double Pocket Overshirt - ₹1,899</span>
+            <button onclick="addToCart('Double Pocket Overshirt', 1899)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Longline Shirt with Zipper - ₹1,799</span>
+            <button onclick="addToCart('Longline Shirt with Zipper', 1799)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Artistic Paint Splash Shirt - ₹1,499</span>
+            <button onclick="addToCart('Artistic Paint Splash Shirt', 1499)">Add to Cart</button>
+        </div>
+        <div class="shirt-item">
+            <span>Metallic Finish Shirt - ₹2,099</span>
+            <button onclick="addToCart('Metallic Finish Shirt', 2099)">Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        function showCategory(category) {
+            // Hide all categories
+            const categories = document.querySelectorAll('.shirt-category');
+            categories.forEach(cat => cat.style.display = 'none');
+
+            // Show the clicked category
+            const selectedCategory = document.getElementById(category);
+            if (selectedCategory) {
+                selectedCategory.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

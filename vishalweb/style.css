@@ -1,0 +1,133 @@
+/* Reset default styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    background-color: #2C3E50; /* Dark blue */
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* Main content styles */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section styles */
+.description {
+    padding: 20px;
+}
+
+/* Title and subheading styles */
+h2 {
+    color: #8E44AD; /* Purple */
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #2980B9; /* Blue */
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+/* Mission text styles */
+p.mission {
+    font-family: 'Roboto', sans-serif;  /* Stylish font from Google Fonts */
+    font-weight: bold;                  /* Bold font */
+    font-size: 2.5em;                   /* Larger font size */
+    color: #2980B9;                     /* Blue color */
+    text-align: center;                 /* Center align text */
+    text-transform: uppercase;          /* Make text uppercase */
+    letter-spacing: 3px;                /* Add spacing between letters */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  /* Print shadow effect */
+    margin-bottom: 20px;                /* Space below the heading */
+}
+
+/* Paragraph and list styles */
+p, ul {
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #2C3E50; /* Dark blue */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+footer h3 {
+    font-size: 1.5em;
+}
+
+/* Contact link styles */
+footer a {
+    color: #ECF0F1;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    p.mission {
+        font-size: 2em;
+    }
+}
