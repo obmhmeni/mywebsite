@@ -1,0 +1,107 @@
+from telegram import Update
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+import re
+import json
+import os
+
+# Load or initialize customer orders
+if os.path.exists("customer_orders.json"):
+    with open("customer_orders.json", "r") as file:
+        customer_orders = json.load(file)
+else:
+    customer_orders = {}
+
+# Keywords for filtering
+keywords = ["potato", "tomato", "onion", "rice", "daal"]
+
+# Function to parse the message
+def parse_message(message):
+    lines = message.split("\n")
+    address = None
+    orders = {}
+    
+    for line in lines:
+        # Address detection
+        if any(keyword not in line.lower() for keyword in keywords):
+            address = line.strip()
+        
+        # Extracting item and quantity
+        for keyword in keywords:
+            if keyword in line.lower():
+                quantities = re.findall(r'\d+\s*(kg|gm|litre)', line, re.IGNORECASE)
+                total_quantity = sum(int(q.split("kg")[0].strip()) for q in quantities)
+                orders[keyword] = {"quantities": quantities, "total": total_quantity}
+    
+    return address, orders
+
+# Start command
+def start(update: Update, context: CallbackContext) -> None:
+    update.message.reply_text("Welcome! Please send your complete order including address and items.")
+
+# Message handler for filtering and storing
+def filter_and_store(update: Update, context: CallbackContext) -> None:
+    user_id = update.message.chat_id
+    message = update.message.text
+    address, orders = parse_message(message)
+    
+    if not address:
+        update.message.reply_text("Please include your address in the message.")
+        return
+
+    # Store order in the customer_orders dictionary
+    if user_id not in customer_orders:
+        customer_orders[user_id] = []
+    
+    customer_orders[user_id].append({
+        "address": address,
+        "orders": orders
+    })
+    
+    # Save data to JSON file
+    with open("customer_orders.json", "w") as file:
+        json.dump(customer_orders, file)
+    
+    # Confirm order to customer
+    response = f"📍 Address: {address}\n\n🛒 Order Summary:\n"
+    for item, details in orders.items():
+        response += f"- {item.capitalize()}: {details['total']} kg ({', '.join(details['quantities'])})\n"
+    update.message.reply_text(f"Your order has been noted:\n\n{response}")
+
+# Admin command to view all orders
+def view_orders(update: Update, context: CallbackContext) -> None:
+    admin_id = 123456789  # Replace with your Telegram ID (e.g., 123456789)
+    if update.message.chat_id != int(admin_id):
+        update.message.reply_text("You are not authorized to use this command.")
+        return
+
+    if not customer_orders:
+        update.message.reply_text("No orders yet.")
+        return
+    
+    # Generate aggregated report
+    response = "📋 All Customer Orders:\n\n"
+    for user_id, orders in customer_orders.items():
+        response += f"👤 Customer ID: {user_id}\n"
+        for order in orders:
+            response += f"📍 Address: {order['address']}\n"
+            for item, details in order['orders'].items():
+                response += f"- {item.capitalize()}: {details['total']} kg ({', '.join(details['quantities'])})\n"
+        response += "\n"
+    
+    update.message.reply_text(response)
+
+# Main function
+def main() -> None:
+    # Replace with your bot's token
+    updater = Updater("7862373362:AAH41qRDeSLSFA6FCScUzYuBOywBubIUGnA")
+
+    dispatcher = updater.dispatcher
+    dispatcher.add_handler(CommandHandler("start", start))
+    dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, filter_and_store))
+    dispatcher.add_handler(CommandHandler("view_orders", view_orders))
+
+    updater.start_polling()
+    updater.idle()
+
+if __name__ == '__main__':
+    main()
